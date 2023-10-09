@@ -6,33 +6,19 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedContentScope
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.harry.jetpack.compose.test.module.MakeAirportListPage
-import com.harry.jetpack.compose.test.module.MakeProductDetailPage
-import com.harry.jetpack.compose.test.module.MakeTopPage
+import com.harry.jetpack.compose.test.module.airportlist.MakeAirportListPage
+import com.harry.jetpack.compose.test.module.productdetail.MakeProductDetailPage
+import com.harry.jetpack.compose.test.module.top.MakeTopPage
 import com.harry.jetpack.compose.test.ui.theme.HarryJetpackComposeTestTheme
 
 class MainActivity : ComponentActivity() {
@@ -57,7 +43,7 @@ class MainActivity : ComponentActivity() {
                             MakeAirportListPage(navController)
                         }
                         makeRoute(route = Routes.ProductDetail.route) {
-                            MakeProductDetailPage()
+                            MakeProductDetailPage(navController)
                         }
                     }
                 }

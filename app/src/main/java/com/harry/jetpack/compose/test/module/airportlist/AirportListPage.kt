@@ -1,6 +1,5 @@
-package com.harry.jetpack.compose.test.module
+package com.harry.jetpack.compose.test.module.airportlist
 
-import android.content.res.AssetManager
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -36,6 +35,7 @@ import androidx.navigation.compose.rememberNavController
 import com.google.gson.Gson
 import com.harry.jetpack.compose.test.R
 import com.harry.jetpack.compose.test.model.AirportList
+import com.harry.jetpack.compose.test.shared.readAssetsFile
 import com.harry.jetpack.compose.test.ui.theme.HarryJetpackComposeTestTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -103,8 +103,6 @@ fun MakeAirportListPage(navController: NavController) {
         }
     )
 }
-
-fun AssetManager.readAssetsFile(fileName: String): String = open(fileName).bufferedReader().use { it.readText() }
 
 @Preview(showBackground = true)
 @Composable
